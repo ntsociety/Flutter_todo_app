@@ -296,7 +296,14 @@ class _TodoListState extends State<TodoList> {
                     ),
                   ),
                 ),
-                title: Text("${todo['titre']}"),
+                title: Text(
+                  "${todo['titre']}",
+                  style: TextStyle(
+                    decoration: todo['is_completed']
+                        ? TextDecoration.lineThrough
+                        : TextDecoration.none,
+                  ),
+                ),
                 subtitle: Text("${todo['date']}"),
                 trailing: InkWell(
                   onTap: () {
